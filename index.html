@@ -33,6 +33,9 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
+    function onSuccess(googleUser) {
+                console.log('Signed in as: ' + googleUser.getBasicProfile().getName());
+            }
 </script>
 
 <!-- Note: You can also specify your app's client ID with the client_id parameter of the gapi.auth2.init() method. -->
@@ -40,18 +43,13 @@
 <body class="bg-light">
 
     <body>
-
+        <div>do something</div>
 
         <meta name="google-signin-client_id"
             content="576272045510-9u1514etape3kdueeep39pmidhcaq9l4.apps.googleusercontent.com">
 
         <!-- [START body] -->
 
-        <script>
-            function onSuccess(googleUser) {
-                console.log('Signed in as: ' + googleUser.getBasicProfile().getName());
-            }
-        </script>
         <div class="g-signin2" data-onsuccess="onSuccess" data-gapiscan="true" data-onload="true">
             <div style="height:36px;width:120px;" class="abcRioButton abcRioButtonLightBlue">
                 <div class="abcRioButtonContentWrapper">
